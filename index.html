@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brand Identity Design</title>
-  <script src="/_sdk/element_sdk.js"></script>
   <style>
     * {
       margin: 0;
@@ -17,6 +16,8 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       overflow-x: hidden;
       scroll-behavior: smooth;
+      background-color: #1a2332;
+      color: #e8eef5;
     }
 
     html, body {
@@ -36,13 +37,14 @@
       left: 0;
       right: 0;
       padding: 1.5rem 5%;
+      background-color: rgba(26, 35, 50, 0.95);
       backdrop-filter: blur(10px);
       z-index: 1000;
       transition: all 0.3s ease;
     }
 
     nav.scrolled {
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
     }
 
     .nav-content {
@@ -57,6 +59,7 @@
       font-size: 1.5rem;
       font-weight: 700;
       letter-spacing: -0.5px;
+      color: #e8eef5;
     }
 
     .nav-links {
@@ -69,6 +72,7 @@
       text-decoration: none;
       font-weight: 500;
       font-size: 0.95rem;
+      color: #e8eef5;
       transition: all 0.3s ease;
       position: relative;
     }
@@ -80,6 +84,7 @@
       left: 0;
       width: 0;
       height: 2px;
+      background-color: #5fb3b3;
       transition: width 0.3s ease;
     }
 
@@ -87,35 +92,9 @@
       width: 100%;
     }
 
-    /* Hero Section */
-    .hero {
-      min-height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 6rem 5% 4rem;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, #1a2332 0%, #2d3e50 50%, #1a2f3f 100%);
-    }
-
-    .hero-content {
-      max-width: 1200px;
-      text-align: center;
-      z-index: 1;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      font-weight: 800;
-      margin-bottom: 1.5rem;
-      line-height: 1.1;
-      animation: fadeInUp 1s ease;
-    }
-
     /* Services Grid */
     .services {
-      padding: 5rem 5%;
+      padding: 8rem 5% 5rem;
       max-width: 900px;
       margin: 0 auto;
       background: linear-gradient(135deg, #1a2332 0%, #2d3e50 50%, #1a2f3f 100%);
@@ -220,6 +199,7 @@
       font-size: 2rem;
       margin-bottom: 1rem;
       font-weight: 700;
+      color: #e8eef5;
       transition: all 0.3s ease;
     }
 
@@ -230,6 +210,7 @@
     .service-card p {
       line-height: 1.8;
       font-size: 1.05rem;
+      color: #e8eef5;
       opacity: 0.8;
       transition: all 0.3s ease;
     }
@@ -242,11 +223,13 @@
     footer {
       padding: 3rem 5%;
       text-align: center;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      background-color: #1a2332;
+      border-top: 1px solid rgba(232, 238, 245, 0.2);
     }
 
     footer p {
       font-size: 0.95rem;
+      color: #e8eef5;
       opacity: 0.7;
     }
 
@@ -280,11 +263,14 @@
       gap: 5px;
       cursor: pointer;
       padding: 5px;
+      background: none;
+      border: none;
     }
 
     .mobile-menu-btn span {
       width: 25px;
       height: 3px;
+      background-color: #e8eef5;
       border-radius: 2px;
       transition: all 0.3s ease;
     }
@@ -298,6 +284,7 @@
         flex-direction: column;
         gap: 0;
         padding: 2rem;
+        background-color: rgba(26, 35, 50, 0.98);
         backdrop-filter: blur(10px);
         transform: translateY(-100%);
         opacity: 0;
@@ -313,19 +300,11 @@
 
       .nav-links li {
         padding: 1rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(232, 238, 245, 0.2);
       }
 
       .mobile-menu-btn {
         display: flex;
-      }
-
-      .hero-services {
-        gap: 1.5rem;
-      }
-
-      .hero-tag {
-        font-size: 0.9rem;
       }
 
       .service-card {
@@ -340,6 +319,7 @@
   </style>
   <style>@view-transition { navigation: auto; }</style>
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
   <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
  </head>
  <body>
@@ -350,7 +330,7 @@
       Brand Identity Design
      </div><button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu"> <span></span> <span></span> <span></span> </button>
      <ul class="nav-links" id="navLinks">
-      <li><a href="#hero">Home</a></li>
+      <li><a href="#services">Home</a></li>
       <li><a href="#logo-design">Logo Design</a></li>
       <li><a href="#motion-graphics">Motion Graphics</a></li>
       <li><a href="#social-posts">Social Posts</a></li>
@@ -367,8 +347,8 @@
        <div class="floating-shape shape-3"></div><img src="https://arwamalhazmi.github.io/landing-page/imgs/logoDesign.png" alt="Logo Design" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
       </div>
       <div class="service-content">
-       <h3 id="logoTitle">Logo Design</h3>
-       <p id="logoDescription">We take logo designing seriously and go beyond aesthetics and think deep about the message and impact of a logo on the target market.</p>
+       <h3>Logo Design</h3>
+       <p>We take logo designing seriously and go beyond aesthetics and think deep about the message and impact of a logo on the target market.</p>
       </div>
      </div><!-- Motion Graphics -->
      <div class="service-card fade-in" id="motion-graphics">
@@ -378,8 +358,8 @@
        <div class="floating-shape shape-3"></div><img src="https://arwamalhazmi.github.io/landing-page/imgs/motionGraphic.png" alt="Motion Graphics" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
       </div>
       <div class="service-content">
-       <h3 id="motionTitle">Motion Graphics</h3>
-       <p id="motionDescription">Stand OUT &amp; Tell Great Stories! Our passionate team of motion graphics designers empower you to tell great stories for your business.</p>
+       <h3>Motion Graphics</h3>
+       <p>Stand OUT &amp; Tell Great Stories! Our passionate team of motion graphics designers empower you to tell great stories for your business.</p>
       </div>
      </div><!-- Social Posts -->
      <div class="service-card fade-in" id="social-posts">
@@ -389,8 +369,8 @@
        <div class="floating-shape shape-3"></div><img src="https://arwamalhazmi.github.io/landing-page/imgs/social.png" alt="Social Posts" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
       </div>
       <div class="service-content">
-       <h3 id="socialTitle">Social Posts</h3>
-       <p id="socialDescription">sharing news about your organization on your social media accounts, share relevant articles and updates about your industry as well.</p>
+       <h3>Social Posts</h3>
+       <p>sharing news about your organization on your social media accounts, share relevant articles and updates about your industry as well.</p>
       </div>
      </div><!-- On-Brand Website -->
      <div class="service-card fade-in" id="website">
@@ -400,230 +380,17 @@
        <div class="floating-shape shape-3"></div><img src="https://arwamalhazmi.github.io/landing-page/imgs/website.png" alt="On-Brand Website" onerror="this.src=''; this.alt='Image failed to load'; this.style.display='none';">
       </div>
       <div class="service-content">
-       <h3 id="websiteTitle">On-Brand Website</h3>
-       <p id="websiteDescription">A website is the fastest way to look like a pro and get customers to trust you (and want to work with you!)</p>
+       <h3>On-Brand Website</h3>
+       <p>A website is the fastest way to look like a pro and get customers to trust you (and want to work with you!)</p>
       </div>
      </div>
     </div>
    </section><!-- Footer -->
    <footer>
-    <p id="footerText">© Arwa Alhazmi</p>
+    <p>© Arwa Alhazmi</p>
    </footer>
   </div>
   <script>
-    const defaultConfig = {
-      background_color: "#1a2332",
-      surface_color: "#243447",
-      text_color: "#e8eef5",
-      primary_action_color: "#5fb3b3",
-      secondary_action_color: "#d4a574",
-      font_family: "Inter",
-      font_size: 16,
-      main_title: "Brand Identity Design",
-      logo_title: "Logo Design",
-      logo_description: "We take logo designing seriously and go beyond aesthetics and think deep about the message and impact of a logo on the target market.",
-      motion_title: "Motion Graphics",
-      motion_description: "Stand OUT & Tell Great Stories! Our passionate team of motion graphics designers empower you to tell great stories for your business.",
-      social_title: "Social Posts",
-      social_description: "sharing news about your organization on your social media accounts, share relevant articles and updates about your industry as well.",
-      website_title: "On-Brand Website",
-      website_description: "A website is the fastest way to look like a pro and get customers to trust you (and want to work with you!)",
-      footer_text: "© Arwa Alhazmi"
-    };
-
-    async function onConfigChange(config) {
-      const baseFontStack = '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-      const customFont = config.font_family || defaultConfig.font_family;
-      const baseSize = config.font_size || defaultConfig.font_size;
-      const backgroundColor = config.background_color || defaultConfig.background_color;
-      const surfaceColor = config.surface_color || defaultConfig.surface_color;
-      const textColor = config.text_color || defaultConfig.text_color;
-      const primaryActionColor = config.primary_action_color || defaultConfig.primary_action_color;
-      const secondaryActionColor = config.secondary_action_color || defaultConfig.secondary_action_color;
-
-      document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
-      document.body.style.fontSize = `${baseSize}px`;
-      document.body.style.backgroundColor = backgroundColor;
-      document.body.style.color = textColor;
-
-      const nav = document.getElementById('navbar');
-      nav.style.backgroundColor = `${backgroundColor}ee`;
-
-      document.querySelector('.logo').style.color = textColor;
-
-      const navLinks = document.querySelectorAll('.nav-links a');
-      navLinks.forEach(link => {
-        link.style.color = textColor;
-      });
-
-      const navLinkAfterStyle = document.createElement('style');
-      navLinkAfterStyle.textContent = `.nav-links a::after { background-color: ${primaryActionColor}; }`;
-      document.head.appendChild(navLinkAfterStyle);
-
-      document.querySelector('.hero').style.background = `linear-gradient(135deg, ${backgroundColor} 0%, #2d3e50 50%, #1a2f3f 100%)`;
-
-      document.querySelector('.services').style.background = `linear-gradient(135deg, ${backgroundColor} 0%, #2d3e50 50%, #1a2f3f 100%)`;
-
-      const logoTitle = document.getElementById('logoTitle');
-      logoTitle.textContent = config.logo_title || defaultConfig.logo_title;
-      logoTitle.style.color = textColor;
-      logoTitle.style.fontSize = `${baseSize * 1.75}px`;
-
-      const logoDescription = document.getElementById('logoDescription');
-      logoDescription.textContent = config.logo_description || defaultConfig.logo_description;
-      logoDescription.style.color = textColor;
-      logoDescription.style.fontSize = `${baseSize}px`;
-
-      const motionTitle = document.getElementById('motionTitle');
-      motionTitle.textContent = config.motion_title || defaultConfig.motion_title;
-      motionTitle.style.color = textColor;
-      motionTitle.style.fontSize = `${baseSize * 1.75}px`;
-
-      const motionDescription = document.getElementById('motionDescription');
-      motionDescription.textContent = config.motion_description || defaultConfig.motion_description;
-      motionDescription.style.color = textColor;
-      motionDescription.style.fontSize = `${baseSize}px`;
-
-      const socialTitle = document.getElementById('socialTitle');
-      socialTitle.textContent = config.social_title || defaultConfig.social_title;
-      socialTitle.style.color = textColor;
-      socialTitle.style.fontSize = `${baseSize * 1.75}px`;
-
-      const socialDescription = document.getElementById('socialDescription');
-      socialDescription.textContent = config.social_description || defaultConfig.social_description;
-      socialDescription.style.color = textColor;
-      socialDescription.style.fontSize = `${baseSize}px`;
-
-      const websiteTitle = document.getElementById('websiteTitle');
-      websiteTitle.textContent = config.website_title || defaultConfig.website_title;
-      websiteTitle.style.color = textColor;
-      websiteTitle.style.fontSize = `${baseSize * 1.75}px`;
-
-      const websiteDescription = document.getElementById('websiteDescription');
-      websiteDescription.textContent = config.website_description || defaultConfig.website_description;
-      websiteDescription.style.color = textColor;
-      websiteDescription.style.fontSize = `${baseSize}px`;
-
-      const footer = document.querySelector('footer');
-      footer.style.backgroundColor = backgroundColor;
-      footer.style.borderTopColor = `${textColor}33`;
-
-      const footerText = document.getElementById('footerText');
-      footerText.textContent = config.footer_text || defaultConfig.footer_text;
-      footerText.style.color = textColor;
-      footerText.style.fontSize = `${baseSize * 0.95}px`;
-
-      const mobileMenuBtnSpans = document.querySelectorAll('.mobile-menu-btn span');
-      mobileMenuBtnSpans.forEach(span => {
-        span.style.backgroundColor = textColor;
-      });
-
-      const mobileNavLinksStyle = document.createElement('style');
-      mobileNavLinksStyle.textContent = `
-        @media (max-width: 768px) {
-          .nav-links { background-color: ${backgroundColor}f5; }
-          .nav-links li { border-bottom-color: ${textColor}33; }
-        }
-      `;
-      document.head.appendChild(mobileNavLinksStyle);
-    }
-
-    function mapToCapabilities(config) {
-      return {
-        recolorables: [
-          {
-            get: () => config.background_color || defaultConfig.background_color,
-            set: (value) => {
-              if (window.elementSdk) {
-                window.elementSdk.config.background_color = value;
-                window.elementSdk.setConfig({ background_color: value });
-              }
-            }
-          },
-          {
-            get: () => config.surface_color || defaultConfig.surface_color,
-            set: (value) => {
-              if (window.elementSdk) {
-                window.elementSdk.config.surface_color = value;
-                window.elementSdk.setConfig({ surface_color: value });
-              }
-            }
-          },
-          {
-            get: () => config.text_color || defaultConfig.text_color,
-            set: (value) => {
-              if (window.elementSdk) {
-                window.elementSdk.config.text_color = value;
-                window.elementSdk.setConfig({ text_color: value });
-              }
-            }
-          },
-          {
-            get: () => config.primary_action_color || defaultConfig.primary_action_color,
-            set: (value) => {
-              if (window.elementSdk) {
-                window.elementSdk.config.primary_action_color = value;
-                window.elementSdk.setConfig({ primary_action_color: value });
-              }
-            }
-          },
-          {
-            get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
-            set: (value) => {
-              if (window.elementSdk) {
-                window.elementSdk.config.secondary_action_color = value;
-                window.elementSdk.setConfig({ secondary_action_color: value });
-              }
-            }
-          }
-        ],
-        borderables: [],
-        fontEditable: {
-          get: () => config.font_family || defaultConfig.font_family,
-          set: (value) => {
-            if (window.elementSdk) {
-              window.elementSdk.config.font_family = value;
-              window.elementSdk.setConfig({ font_family: value });
-            }
-          }
-        },
-        fontSizeable: {
-          get: () => config.font_size || defaultConfig.font_size,
-          set: (value) => {
-            if (window.elementSdk) {
-              window.elementSdk.config.font_size = value;
-              window.elementSdk.setConfig({ font_size: value });
-            }
-          }
-        }
-      };
-    }
-
-    function mapToEditPanelValues(config) {
-      return new Map([
-        ["main_title", config.main_title || defaultConfig.main_title],
-        ["logo_title", config.logo_title || defaultConfig.logo_title],
-        ["logo_description", config.logo_description || defaultConfig.logo_description],
-        ["motion_title", config.motion_title || defaultConfig.motion_title],
-        ["motion_description", config.motion_description || defaultConfig.motion_description],
-        ["social_title", config.social_title || defaultConfig.social_title],
-        ["social_description", config.social_description || defaultConfig.social_description],
-        ["website_title", config.website_title || defaultConfig.website_title],
-        ["website_description", config.website_description || defaultConfig.website_description],
-        ["footer_text", config.footer_text || defaultConfig.footer_text]
-      ]);
-    }
-
-    // Initialize SDK
-    if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange,
-        mapToCapabilities,
-        mapToEditPanelValues
-      });
-    }
-
     // Smooth scroll for navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -670,5 +437,5 @@
       navLinks.classList.toggle('active');
     });
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a815ff2057fee59',t:'MTc2NDc0NzE5NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a81820750deee59',t:'MTc2NDc0ODU5MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
